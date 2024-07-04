@@ -9,8 +9,8 @@ const About = () => {
             from State University of Bangladesh, currently in the learning phase
             and actively seeking an internship to enhance my skills in web and
             mobile application development. Although I do not have professional
-            experience, I am proficient in JavaScript, Python, and HTML/CSS, and
-            have completed several personal projects that demonstrate my
+            experience, I am proficient in JavaScript, and HTML/CSS, and
+            have completed personal projects that demonstrate my
             capabilities and commitment. I am eager to learn from experienced
             professionals and contribute to innovative projects, aiming to build
             a solid foundation for a successful career in software development.

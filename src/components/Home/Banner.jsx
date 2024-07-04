@@ -18,6 +18,31 @@ const Banner = () => {
                   </div>
                 </span>{" "}
               </h1>
+              <div className="flex space-x-2 mb-4">
+            <a
+              href="https://www.linkedin.com/in/farzana-hossain-769518269/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500"
+            >
+              <img
+                className="h-8 w-8 "
+                src="https://img.icons8.com/doodle/40/000000/instagram-new--v2.png"
+              ></img>
+            </a>
+
+            <a
+              href="https://github.com/Bithe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500"
+            >
+              <img
+                className="h-8 w-8 "
+                src="https://img.icons8.com/doodle/40/000000/github--v1.png"
+              ></img>{" "}
+            </a>
+          </div>
 
               <a
                 href="https://drive.google.com/uc?export=download&id=1FfkOGlEmzBE4B9jtuMM7u6GcHc0a80yW"
