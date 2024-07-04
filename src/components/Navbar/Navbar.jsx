@@ -9,6 +9,9 @@ const Navbar = () => {
             <img className="h-8 w-auto mr-2" src={portfolio}></img>
           </a>
           <div>
+            <a href="#about" className="text-white mr-4">
+              About
+            </a>
             <a href="#skills" className="text-white mr-4">
               Skills
             </a>
@@ -24,6 +27,8 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+    
     </div>
   );
 };
