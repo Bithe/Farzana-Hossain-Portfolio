@@ -1,12 +1,32 @@
+import  { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries());
-    const emailBody = `Name: ${data.name}\nEmail: ${data.email}\nMessage: ${data.message}`;
-    const mailtoLink = `mailto:Farzana.hossain147@gmail.com?subject=Contact Form Submission&body=${encodeURIComponent(emailBody)}`;
-    window.location.href = mailtoLink;
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.send(
+      'YOUR_SERVICE_ID',
+      'YOUR_TEMPLATE_ID',
+      formData,
+      'Farzana.hossain'
+    ).then((result) => {
+      console.log(result.text);
+      alert('Message sent successfully!');
+    }, (error) => {
+      console.log(error.text);
+      alert('An error occurred, please try again.');
+    });
   };
 
   return (
@@ -18,7 +38,7 @@ const Contact = () => {
           </h2>
           <p className="text-center">
             If you want to know more about me or my work, or if you would just
-            like to say hello, send me a message. I&apos;d love to hear from you.
+            like to say hello, send me a message. I'd love to hear from you.
           </p>
           <p className="text-center text-gray-600 mb-4">
             Email: Farzana.hossain147@gmail.com
@@ -61,6 +81,8 @@ const Contact = () => {
                   id="name"
                   name="name"
                   className="w-full p-2 border border-gray-300 rounded"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -71,6 +93,8 @@ const Contact = () => {
                   id="email"
                   name="email"
                   className="w-full p-2 border border-gray-300 rounded"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -80,6 +104,8 @@ const Contact = () => {
                   id="message"
                   name="message"
                   className="w-full p-2 border border-gray-300 rounded"
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                 />
               </div>
